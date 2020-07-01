@@ -20,25 +20,26 @@
       </div>
     </header>
     <main>
-      <div class="container">
-
-
-      </div>
+      <div class="container"></div>
     </main>
 
-
+    <!-- template per ricerche -->
     <script id="entry-template" type="text/x-handlebars-template">
       <div class="entry">
-        <span> titolo : {{ title }}</span>
-        <span> titolo originale : {{ originalTitle }}</span>
+        <h2> titolo : {{ title }}</h2>
+        <span class="titoloOriginale"> titolo originale : {{ originalTitle }}</span>
         <span> lingua : {{ lingua }}</span>
         <span> voto : {{ voto }}</span>
-
-        <div class="body">
-          {{body}}
-        </div>
+        <span>{{ body }}</span>
       </div>
     </script>
+    <!-- template per ricerche vuote -->
+    <script id="error-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{ body }}</h1>
+      </div>
+    </script>
+
     <script src="js/myscript.js" charset="utf-8"></script>
   </body>
 </html>

@@ -2,7 +2,8 @@ $(document).ready(function() {
   // al click del tasto cerca
   $(document).on('click', 'button', function(){
    ricercaFilm();
-  })
+
+ });
   // quando premo invio parte la ricerca
   $('input').keyup(function() {
     if (event.which === 13 || event.keyCode === 13) {
@@ -11,10 +12,9 @@ $(document).ready(function() {
   });
 
 
-
 // ------------ FUNZIONI -------------------
 
-// funzione per la ricerca dei film
+// Funzione per la ricerca dei film
 function ricercaFilm() {
   var filmRicercato = $('input').val();
   var entry = $('.entry').remove();
@@ -29,7 +29,7 @@ function ricercaFilm() {
     success: function (data) {
       var datiRisultati = data.results;
       if (datiRisultati.length == 0) {
-          nessunRisultato()
+          nessunRisultato();
       }
       else {
         stampaFilm(datiRisultati);
@@ -38,41 +38,49 @@ function ricercaFilm() {
     error:(function() {
       alert('Attenzione Errore');
     })
-  })
+  });
 };
 
 
-// funzione per stampare la ricerca dei film
+// Funzione per stampare la ricerca dei film
 function stampaFilm(film) {
   for (var i = 0; i < film.length; i++) {
     var titoloFilm = film[i].title;
     var titoloOriginaleFilm = film[i].original_title;
     var linguaFilm = film[i].original_language;
     var votoFilm = film[i].vote_average;
-    var source = $("#entry-template").html();
-    var template = Handlebars.compile(source);
     var context = {
         title: titoloFilm,
         originalTitle: titoloOriginaleFilm,
         lingua: linguaFilm,
         voto: votoFilm
       };
-      var html = template(context);
-      $('main .container').append(html);
-    }
+    confrontaTitolo(titoloFilm, titoloOriginaleFilm);
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    $('main .container').append(html);
+  };
 
   };
 
 
-// funzione per mostrare un messaggio in caso di nessun risultato
+// Funzione per mostrare un messaggio in caso di nessun risultato
 function nessunRisultato() {
-  var source = $("#entry-template").html();
+  var source = $("#error-template").html();
   var template = Handlebars.compile(source);
   var context = {
     body: 'nessun risultato'
   };
   var html = template(context);
   $('main .container').append(html);
-}
+};
+
+// funziona che nasconde il titolo originale se lo stesso e' uguale al titolo
+function confrontaTitolo(titolo1, titolo2) {
+	if ( titolo1 === titolo2 ) {
+    $('.titoloOriginale').remove();
+  }
+};
 
 });
