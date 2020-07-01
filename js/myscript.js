@@ -1,16 +1,15 @@
 $(document).ready(function() {
 
-  $('button').click(function() {
-
-      stampaMovie();
-
-  });
+  $(document).on('click', 'button', function(){
+   stampaMovie();
+  })
 
 // ------------ FUNZIONI -------------------
 
 // funzione per stampare la ricerca dei film
 function stampaMovie() {
   var filmRicercato = $('input').val();
+  var entry = $('.entry').remove();
   $.ajax({
     url: 'https://api.themoviedb.org/3/search/movie',
     type: 'GET',
@@ -35,13 +34,11 @@ function stampaMovie() {
         originalTitle: titoloOriginaleFilm,
         lingua: linguaFilm,
         voto: votoFilm
-
       };
 
       var html = template(context);
       $('.container').append(html);
       }
-
 
     },
     error:(function() {
