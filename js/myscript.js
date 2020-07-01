@@ -1,46 +1,10 @@
 $(document).ready(function() {
-  // var source = $("#entry-template").html();
-  // var template = Handlebars.compile(source);
-  // var context = {
-  //   title: "My New Post",
-  //   body: "This is my first post!"
-  // };
-  //
-  // var html = template(context);
-  // $('.container').append(html);
 
   $('button').click(function() {
 
       stampaMovie();
 
   });
-
-
-
-
-
-
-
-// parte funzionante
-  // al click sul bottone
-  // $('button').click(function(event) {
-  //   alert('funziona');
-  //   var filmRicercato = $('input').val();
-  //   console.log(filmRicercato);
-    // fine parte funzionante
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ------------ FUNZIONI -------------------
 
