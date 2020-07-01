@@ -79,7 +79,8 @@ function nessunRisultato() {
 // funziona che nasconde il titolo originale se lo stesso e' uguale al titolo
 function confrontaTitolo(titolo1, titolo2) {
 	if ( titolo1 === titolo2 ) {
-    $('.titoloOriginale').remove();
+    $('.titoloOriginale').addClass('d-none');
+
   }
 };
 
