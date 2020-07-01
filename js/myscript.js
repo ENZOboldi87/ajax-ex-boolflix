@@ -1,13 +1,21 @@
 $(document).ready(function() {
-
+  // al click del tasto cerca
   $(document).on('click', 'button', function(){
-   stampaMovie();
+   ricercaFilm();
   })
+  // quando premo invio parte la ricerca
+  $('input').keyup(function() {
+    if (event.which === 13 || event.keyCode === 13) {
+      ricercaFilm();
+    }
+  });
+
+
 
 // ------------ FUNZIONI -------------------
 
-// funzione per stampare la ricerca dei film
-function stampaMovie() {
+// funzione per la ricerca dei film
+function ricercaFilm() {
   var filmRicercato = $('input').val();
   var entry = $('.entry').remove();
   $.ajax({
@@ -20,32 +28,51 @@ function stampaMovie() {
     },
     success: function (data) {
       var datiRisultati = data.results;
-      // console.log(datiRisultati);
-      for (key in datiRisultati){
-      var titoloFilm = datiRisultati[key].title;
-      var titoloOriginaleFilm = datiRisultati[key].original_title;
-      var linguaFilm = datiRisultati[key].original_language;
-      var votoFilm = datiRisultati[key].vote_average;
-      console.log(votoFilm);
-      var source = $("#entry-template").html();
-      var template = Handlebars.compile(source);
-      var context = {
-        title: titoloFilm,
-        originalTitle: titoloOriginaleFilm,
-        lingua: linguaFilm,
-        voto: votoFilm
-      };
-
-      var html = template(context);
-      $('.container').append(html);
+      if (datiRisultati.length == 0) {
+          nessunRisultato()
       }
-
+      else {
+        stampaFilm(datiRisultati);
+      }
     },
     error:(function() {
       alert('Attenzione Errore');
     })
   })
-
 };
+
+
+// funzione per stampare la ricerca dei film
+function stampaFilm(film) {
+  for (var i = 0; i < film.length; i++) {
+    var titoloFilm = film[i].title;
+    var titoloOriginaleFilm = film[i].original_title;
+    var linguaFilm = film[i].original_language;
+    var votoFilm = film[i].vote_average;
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    var context = {
+        title: titoloFilm,
+        originalTitle: titoloOriginaleFilm,
+        lingua: linguaFilm,
+        voto: votoFilm
+      };
+      var html = template(context);
+      $('main .container').append(html);
+    }
+
+  };
+
+
+// funzione per mostrare un messaggio in caso di nessun risultato
+function nessunRisultato() {
+  var source = $("#entry-template").html();
+  var template = Handlebars.compile(source);
+  var context = {
+    body: 'nessun risultato'
+  };
+  var html = template(context);
+  $('main .container').append(html);
+}
 
 });

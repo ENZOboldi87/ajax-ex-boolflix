@@ -3,3 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.navbar-brand {
+  flex-grow: 1;
+}
+
+.form-control {
+  width: 30%;
+}
