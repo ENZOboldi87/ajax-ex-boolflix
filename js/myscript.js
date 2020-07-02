@@ -31,13 +31,7 @@ function ricercaFilm() {
     },
     success: function (data) {
       var datiRisultati = data.results;
-      if (datiRisultati.length == 0) {
-        var messaggio = 'Non ci sono film risultati nella ricerca';
-          nessunRisultato(messaggio);
-      }
-      else {
-        stampaFilm(datiRisultati);
-      }
+      stampaFilm(datiRisultati);
     },
     error:(function() {
       var messaggioErrore = 'inserisci qualcosa da cercare';
