@@ -4,12 +4,14 @@ $(document).ready(function() {
    ricercaFilm();
    ricercaSerieTv();
 
+
  });
   // quando premo invio parte la ricerca
   $('input').keyup(function() {
     if (event.which === 13 || event.keyCode === 13) {
       ricercaFilm();
       ricercaSerieTv();
+
     }
   });
 
@@ -65,14 +67,18 @@ function stampaFilm(film) {
   };
 
 // Funzione per mostrare un messaggio in caso di nessun risultato
-function nessunRisultato(messaggio) {
-  var source = $("#error-template").html();
-  var template = Handlebars.compile(source);
-  var context = {
-    body: messaggio
-  };
-  var html = template(context);
-  $('main .container .d-flex').append(html);
+function nessunRisultato(messaggio, val1, val2) {
+  if (val1 === 0 && val2 === 0) {
+    var source = $("#error-template").html();
+    var template = Handlebars.compile(source);
+    var context = {
+      body: messaggio
+    };
+    var html = template(context);
+    $('main .container .d-flex').append(html);
+    console.log('sono qui');
+  }
+
 };
 
 // funziona che nasconde il titolo originale se lo stesso e' uguale al titolo
@@ -116,18 +122,18 @@ function stellinevoti(numero) {
   // con math ceil arrotondo il numero in eccesso
   var numeroarrotondato = Math.ceil(numero);
   if (numeroarrotondato == 1) {
-    return '⭐';
+    return '★☆☆☆☆';
   }
   if (numeroarrotondato == 2) {
-    return '⭐⭐';}
+    return '★★☆☆☆';}
   if (numeroarrotondato == 3) {
-    return '⭐⭐⭐';
+    return '★★★☆☆';
   }
   if (numeroarrotondato == 4) {
-    return '⭐⭐⭐⭐';
+    return '★★★★☆';
   }
   if (numeroarrotondato == 5) {
-    return '⭐⭐⭐⭐⭐';
+    return '★★★★★';
   }
 
 };
@@ -176,7 +182,6 @@ function stampaSerieTv(serieTv) {
     $('main .container .d-flex').append(html);
   };
 }
-
 
 
 
