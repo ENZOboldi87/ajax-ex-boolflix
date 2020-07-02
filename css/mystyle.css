@@ -4,10 +4,22 @@
   box-sizing: border-box;
 }
 
+.d-flex {
+  height: 100vh;
+}
+
+
 .navbar-brand {
   flex-grow: 1;
 }
 
 .form-control {
   width: 30%;
+}
+
+.movies {
+  width: 30%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
 }

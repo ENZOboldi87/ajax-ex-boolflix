@@ -20,22 +20,27 @@
       </div>
     </header>
     <main>
-      <div class="container"></div>
+      <div class="container">
+      <div class="d-flex">
+
+      </div>
+      </div>
     </main>
 
     <!-- template per ricerche -->
-    <script id="entry-template" type="text/x-handlebars-template">
-      <div class="entry">
+    <script id="movies-template" type="text/x-handlebars-template">
+      <div class="movies" style="background-image: url({{poster}});">
+
+        <span> {{ genere }}</span>
         <h2> titolo : {{ title }}</h2>
-        <span class="titoloOriginale"> titolo originale : {{ originalTitle }}</span>
-        <span> lingua : {{ lingua }}</span>
-        <span> voto : {{ voto }}</span>
-        <span>{{ body }}</span>
+        <h3> titolo originale : {{ originalTitle }}</h3>
+        <h4> lingua originale : {{ lingua }}</h4>
+        <h5> voto : {{ voto }}</h5>
       </div>
     </script>
     <!-- template per ricerche vuote -->
     <script id="error-template" type="text/x-handlebars-template">
-      <div class="entry">
+      <div class="errore">
         <h1>{{ body }}</h1>
       </div>
     </script>
