@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <div class="container-fluid">
+      <div class="container">
         <nav class="navbar navbar-light justify-content-between">
           <a class="logo" href="#">BoolFlix</a>
             <i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i>
@@ -22,9 +22,6 @@
       </div>
     </header>
     <main>
-
-
-
       <div class="container-fluid">
       <div class="content-movie">
       </div>
@@ -36,10 +33,10 @@
       <div class="movies">
         <div class="text-movies">
           <div class="content-text">
-            <h2> Titolo : {{ title }}</h2>
-            <h3> Lingua originale : {{ lingua }}</h3>
-            <h4> Voto : {{ voto }}</h4>
-            <h5> Overview: {{ Overview }}</h5>
+            <h2> {{ title }}</h2>
+            <h3> Lingua: {{ lingua }}</h3>
+            <h4> {{ voto }}</h4>
+            <h5> {{ Overview }}</h5>
 
           </div>
         </div>

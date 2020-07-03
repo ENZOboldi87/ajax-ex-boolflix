@@ -23,7 +23,7 @@ nav {
 header {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 9999;
 }
 
 .container {
@@ -57,7 +57,7 @@ header {
 
 .text-movies {
   position: absolute;
-  background: #00000085;
+  background: #000000a3;
   color: white;
   display: none;
   z-index: 1;
@@ -76,6 +76,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   padding-top: 100px;
+  justify-content: center;
 }
 
 .poster-img {
@@ -99,5 +100,6 @@ img {
 
 .content-text,h2,h3,h4,h5 {
   background: transparent;
+  padding: 10px;
 
 }
