@@ -114,7 +114,8 @@ $(document).ready(function() {
         poster: copertina(item),
           title: scegliTitolo(item),
           lingua: linguaBandiera(item),
-          voto: stellinevoti(item)
+          voto: stellinevoti(item),
+          Overview: item.overview
         };
 
       var html = template(context);
@@ -133,7 +134,7 @@ $(document).ready(function() {
     if (oggetto.poster_path) {
       immagineCopertina = 'https://image.tmdb.org/t/p/w342/' + oggetto.poster_path;
     } else {
-      immagineCopertina = 'img/noimg.jpg';
+      immagineCopertina = 'img/movie-poster-coming-soon.png';
     }
     return immagineCopertina
   }

@@ -7,6 +7,7 @@
 
 html {
   overflow: scroll;
+  background-color: black;
 }
 
 ::-webkit-scrollbar {
@@ -48,16 +49,23 @@ header {
 
 .movies {
   position: relative;
+  margin: 10px;
+  width: calc((100% / 6) - 10px);
+  padding: 12% 9%;
   cursor: pointer;
-  margin: 10px 10px;
 }
 
 .text-movies {
   position: absolute;
-  height: 100%;
-  background: transparent;
-  width: 100%;
+  background: #00000085;
   color: white;
+  display: none;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
 
 .active {
@@ -67,5 +75,29 @@ header {
 .content-movie {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 60px;
+  padding-top: 100px;
+}
+
+.poster-img {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+.content-text,h2,h3,h4,h5 {
+  background: transparent;
+
 }

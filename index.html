@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <div class="container ms_header">
+      <div class="container-fluid">
         <nav class="navbar navbar-light justify-content-between">
           <a class="logo" href="#">BoolFlix</a>
             <i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i>
@@ -22,7 +22,10 @@
       </div>
     </header>
     <main>
-      <div class="container">
+
+
+
+      <div class="container-fluid">
       <div class="content-movie">
       </div>
       </div>
@@ -32,9 +35,13 @@
     <script id="movies-template" type="text/x-handlebars-template">
       <div class="movies">
         <div class="text-movies">
-          <h2> titolo : {{ title }}</h2>
-          <h4> lingua originale : {{ lingua }}</h4>
-          <h5> voto : {{ voto }}</h5>
+          <div class="content-text">
+            <h2> Titolo : {{ title }}</h2>
+            <h3> Lingua originale : {{ lingua }}</h3>
+            <h4> Voto : {{ voto }}</h4>
+            <h5> Overview: {{ Overview }}</h5>
+
+          </div>
         </div>
         <div class="poster-img">
           <img src="{{poster}}" alt="">
