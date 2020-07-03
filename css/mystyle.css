@@ -2,24 +2,70 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: black;
 }
 
-.d-flex {
-  height: 100vh;
+html {
+  overflow: scroll;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
 
-.navbar-brand {
-  flex-grow: 1;
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.container {
+  max-width: 2800px;
+}
+
+#SearchIcon {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logo {
+  color: red;
+  font-size: 35px;
+  font-weight: 600;
 }
 
 .form-control {
-  width: 30%;
+  width: 25%;
+  display: none;
 }
 
 .movies {
-  width: 30%;
+  position: relative;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+.text-movies {
+  position: absolute;
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: auto;
+  background: transparent;
+  width: 100%;
+  color: white;
+}
+
+.active {
+  display: block;
+}
+
+.content-movie {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 60px;
 }

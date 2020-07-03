@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mystyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,31 +12,33 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <nav class="navbar navbar-light bg-light justify-content-end">
-          <a class="navbar-brand">BoolFlix</a>
-            <input class=" ms_testo_ricerca form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Search">
-            <button class=" ms_ricerca btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <div class="container ms_header">
+        <nav class="navbar navbar-light justify-content-between">
+          <a class="logo" href="#">BoolFlix</a>
+            <i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i>
+            <input class="ms_testo_ricerca form-control mr-sm-2" type="search" placeholder="Cerca Film o Serie Tv" aria-label="Search">
+            <!-- <button class=" ms_ricerca btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </nav>
       </div>
     </header>
     <main>
       <div class="container">
-      <div class="d-flex">
-
+      <div class="content-movie">
       </div>
       </div>
     </main>
 
     <!-- template per ricerche -->
     <script id="movies-template" type="text/x-handlebars-template">
-      <div class="movies" style="background-image: url({{poster}});">
-
-        <span> {{ genere }}</span>
-        <h2> titolo : {{ title }}</h2>
-        <h3> titolo originale : {{ originalTitle }}</h3>
-        <h4> lingua originale : {{ lingua }}</h4>
-        <h5> voto : {{ voto }}</h5>
+      <div class="movies">
+        <div class="text-movies">
+          <h2> titolo : {{ title }}</h2>
+          <h4> lingua originale : {{ lingua }}</h4>
+          <h5> voto : {{ voto }}</h5>
+        </div>
+        <div class="poster-img">
+          <img src="{{poster}}" alt="">
+        </div>
       </div>
     </script>
     <!-- template per ricerche vuote -->
