@@ -30,18 +30,16 @@
     <!-- template per ricerche -->
     <script id="movies-template" type="text/x-handlebars-template">
       <div class="movies">
+      <img src="{{poster}}" alt="">
         <div class="text-movies">
           <div class="content-text">
             <h2> {{ title }}</h2>
             <h3> Lingua: {{ lingua }}</h3>
             <h4> {{ voto }}</h4>
             <h5> {{ Overview }}</h5>
-
           </div>
         </div>
-        <div class="poster-img">
-          <img src="{{poster}}" alt="">
-        </div>
+
       </div>
     </script>
     <!-- template per ricerche vuote -->

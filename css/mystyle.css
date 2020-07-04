@@ -60,6 +60,8 @@ header {
   cursor: pointer;
   min-width: 450px;
   min-height: 450px;
+  transition: transform .5s ease;
+
 }
 
 .text-movies {
@@ -73,6 +75,7 @@ header {
   height: 100%;
   width: 100%;
   overflow: auto;
+  transition: transform 0.4s ease-in-out;
 }
 
 .active {
@@ -86,7 +89,10 @@ header {
   justify-content: center;
 }
 
-.poster-img {
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -95,13 +101,22 @@ header {
   left: 0;
   bottom: 0;
   right: 0;
+  transition: transform 0.4s ease-in-out;
 }
 
-img {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
+img.active, .text-movies.active {
+  transform: scale(1.05);
 }
+
+/* img.active:active {
+  transform: scale(1.5);
+} */
+
+/* .movies .poster-img img:hover {
+  transform: scale(1.5);
+}img:hover {
+
+} */
 
 
 

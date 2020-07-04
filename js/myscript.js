@@ -20,12 +20,16 @@ $(document).ready(function() {
 
   // la passaggio del mouse sulle copertine
   $(document).on('mouseenter', '.movies', function(){
+    $(this).find('img').addClass('active');
     $(this).find('.text-movies').addClass('active');
+
   });
 
   // quando il mouse esce dalle copertine
  $(document).on('mouseleave', '.movies', function(){
+   $(this).find('img').removeClass('active');
    $(this).find('.text-movies').removeClass('active');
+
   });
 
 
