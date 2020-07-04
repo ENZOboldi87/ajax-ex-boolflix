@@ -72,7 +72,7 @@ header {
   display: block;
 }
 
-.content-movie {
+.content {
   display: flex;
   flex-wrap: wrap;
   padding-top: 100px;

@@ -126,17 +126,19 @@ $(document).ready(function() {
           title: scegliTitolo(item),
           lingua: linguaBandiera(item),
           voto: stellinevoti(item),
-          Overview: item.overview
+          Overview: item.overview,
         };
 
+
       var html = template(context);
-      $(".content-movie").append(html);
+      $(".content").append(html);
     });
   };
 
+
   // funzione che rimuove il contenuto
   function cancellaContenuto() {
-    $(".content-movie").html('');
+    $(".content").html('');
   }
 
   // funzone che stampa la copertina del film/serie tv
