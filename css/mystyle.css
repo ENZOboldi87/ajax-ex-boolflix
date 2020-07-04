@@ -2,12 +2,17 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: black;
+  background-color: #0f0f0f;
 }
 
 html {
   overflow: scroll;
-  background-color: black;
+  background-color: #0f0f0f;
+}
+
+a:hover {
+  text-decoration: none;
+  color: red;
 }
 
 ::-webkit-scrollbar {
@@ -53,6 +58,8 @@ header {
   width: calc((100% / 6) - 10px);
   padding: 12% 9%;
   cursor: pointer;
+  min-width: 450px;
+  min-height: 450px;
 }
 
 .text-movies {
