@@ -12,6 +12,7 @@ $(document).ready(function() {
       var query = $('input').val();
       cancellaContenuto();
       ricerca('search/movie', query);
+      ricerca('search/tv', query);
       $('input').hide();
       $('i').show(500);
     }
@@ -107,15 +108,15 @@ $(document).ready(function() {
     var source = $("#movies-template").html();
     var template = Handlebars.compile(source);
     // se la ricerca non produce risultati viene appeso il template di errore Handlebars
-    if (datiRisultati.length == 0) {
-      var context = {
-        body: 'La tua ricerca non ha prodotto risultati'
-      };
-      var source = $("#error-template").html();
-      var template = Handlebars.compile(source);
-      var html = template(context);
-      $(".content-movie").append(html);
-    }
+    // if (datiRisultati.length == 0) {
+    //   var context = {
+    //     body: 'La tua ricerca non ha prodotto risultati'
+    //   };
+    //   var source = $("#error-template").html();
+    //   var template = Handlebars.compile(source);
+    //   var html = template(context);
+    //   $(".content-movie").append(html);
+    // }
 
     // genero contenuto per l handlebars
     datiRisultati.forEach(function(item) {
